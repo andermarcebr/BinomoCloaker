@@ -157,7 +157,13 @@
                     "curl",
                     "gce-spider",
                     "yandex.com/bots",
-                    "OdklBot"
+                    "OdklBot",
+                    "AdsBot-Google-Mobile",
+                    "AdsBot-Google",
+                    "Googlebot",
+                    "Storebot-Google",
+                    "google",
+                    "Google"
                 ],
                 "isps": [
                     "facebook",

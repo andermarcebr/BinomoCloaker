@@ -1,9 +1,9 @@
 <?php
-//Включение отладочной информации
+// Ativa as informações de depuração
 ini_set('display_errors', '1');
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-//Конец включения отладочной информации
+// Fim da habilitação das informações de depuração
 
 require_once 'settings.php';
 require_once 'db.php';
@@ -41,26 +41,26 @@ $date = new DateTime();
 $ts = $date->getTimestamp();
 
 $is_duplicate=has_conversion_cookies($name,$phone);
-//устанавливаем пользователю в куки его имя и телефон, чтобы показать их на стр Спасибо
-//также ставим куки даты конверсии
+//Defina o cookie com o nome e número de telefone do usuário para mostrá-los na página Obrigado
+// também define o cookie da data de conversão
 ywbsetcookie('name',$name,'/');
 ywbsetcookie('phone',$phone,'/');
 ywbsetcookie('ctime',$ts,'/');
 
-//шлём в ПП только если это не дубль
+// envia para PP somente se não for um double
 if (!$is_duplicate){
     $fullpath='';
-    //если у формы прописан в action адрес, а не локальный скрипт, то шлём все данные формы на этот адрес
+    //se o formulário tem um endereço na ação, e não um script local, então enviamos todos os dados do formulário para este endereço
     if (substr($black_land_conversion_script, 0, 4 ) === "http"){
         $fullpath=$black_land_conversion_script;
     }
-    //иначе составляем полный адрес до скрипта отправки ПП
+    // caso contrário, compomos o endereço completo para o script para envio do PP
     else{
         $url= get_cookie('landing').'/'.$black_land_conversion_script;
         $fullpath = get_abs_from_rel($url);
     }
 
-    //на всякий случай, перед отправкой чекаем, установлен ли subid
+    //apenas por precaução, verifique se o subid está definido antes de enviar
     $sub_rewrites=array_column($sub_ids,'rewrite','name');
     if (array_key_exists('subid',$sub_rewrites)){
         if (!isset($_POST[$sub_rewrites['subid']])||
@@ -70,7 +70,7 @@ if (!$is_duplicate){
 
     $res=post($fullpath,http_build_query($_POST));
 
-    //в ответе должен быть редирект, если его нет - грузим обычную страницу Спасибо кло
+    //resposta deve conter um redirecionamento, caso não exista carregaremos uma página normal Obrigado clo
     switch($res["info"]["http_code"]){
         case 302:
             add_lead($subid,$name,$phone);
