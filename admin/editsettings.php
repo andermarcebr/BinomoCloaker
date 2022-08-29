@@ -71,10 +71,10 @@ if (isset($_GET['startdate'])&& isset($_GET['enddate'])) {
 
                             <a class="has-arrow" href="index.php?password=<?=$_GET['password']?><?=$date_str!==''?$date_str:''?>" aria-expanded="false"><i class="icon nalika-bar-chart icon-wrap"></i> <span class="mini-click-non">Traffic</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="Стата" href="statistics.php?password=<?=$_GET['password']?><?=$date_str!==''?$date_str:''?>"><span class="mini-sub-pro">Statistics</span></a></li>
-                                <li><a title="Разрешённый" href="index.php?password=<?=$_GET['password']?><?=$date_str!==''?$date_str:''?>"><span class="mini-sub-pro">Allowed</span></a></li>
-                                <li><a title="Лиды" href="index.php?filter=leads&password=<?=$_GET['password']?><?=$date_str!==''?$date_str:''?>"><span class="mini-sub-pro">Leads</span></a></li>
-                                <li><a title="Заблокированный" href="index.php?filter=blocked&password=<?=$_GET['password']?><?=$date_str!==''?$date_str:''?>"><span class="mini-sub-pro">Blocked</span></a></li>
+                                <li><a title="Estatísticas" href="statistics.php?password=<?=$_GET['password']?><?=$date_str!==''?$date_str:''?>"><span class="mini-sub-pro">Estatisticas</span></a></li>
+                                <li><a title="Permitido" href="index.php?password=<?=$_GET['password']?><?=$date_str!==''?$date_str:''?>"><span class="mini-sub-pro">Permitidos</span></a></li>
+                                <li><a title="Leads" href="index.php?filter=leads&password=<?=$_GET['password']?><?=$date_str!==''?$date_str:''?>"><span class="mini-sub-pro">Leads</span></a></li>
+                                <li><a title="Bloqueado" href="index.php?filter=blocked&password=<?=$_GET['password']?><?=$date_str!==''?$date_str:''?>"><span class="mini-sub-pro">Bloqueados</span></a></li>
 
                             </ul>
                         </li>
@@ -147,11 +147,11 @@ if (isset($_GET['startdate'])&& isset($_GET['enddate'])) {
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <div class="all-form-element-inner">
                                                 <hr>
-<h4>#1 Настройка вайта</h4>
+<h4>#1 Configuração Branca(White Page)</h4>
 <div class="form-group-inner">
     <div class="row">
         <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-            <label class="login2 pull-left pull-left-pro">Выберите метод: </label>
+            <label class="login2 pull-left pull-left-pro">Escolha o método: </label>
         </div>
         <div class="col-lg-9 col-md-6 col-sm-6 col-xs-12">
             <div class="bt-df-checkbox pull-left">
@@ -159,7 +159,7 @@ if (isset($_GET['startdate'])&& isset($_GET['enddate'])) {
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="i-checks pull-left">
                             <label>
-                                    <input type="radio" <?=$white_action==='folder'?'checked':''?> value="folder" name="white.action" onclick="(document.getElementById('b_2').style.display='block'); (document.getElementById('b_3').style.display='none'); (document.getElementById('b_4').style.display='none'); (document.getElementById('b_5').style.display='none')"> Локальный вайт-пейдж из папки </label>
+                                    <input type="radio" <?=$white_action==='folder'?'checked':''?> value="folder" name="white.action" onclick="(document.getElementById('b_2').style.display='block'); (document.getElementById('b_3').style.display='none'); (document.getElementById('b_4').style.display='none'); (document.getElementById('b_5').style.display='none')">Página Branca uma pasta local</label>
                         </div>
                     </div>
                 </div>
@@ -195,7 +195,7 @@ if (isset($_GET['startdate'])&& isset($_GET['enddate'])) {
     <div class="form-group-inner">
         <div class="row">
             <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
-                <label class="login2 pull-left pull-left-pro">Папка, где лежит вайт: </label>
+                <label class="login2 pull-left pull-left-pro">A pasta onde está a página branca(white): </label>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                 <div class="input-group custom-go-button">
@@ -209,7 +209,7 @@ if (isset($_GET['startdate'])&& isset($_GET['enddate'])) {
 <div class="form-group-inner">
     <div class="row">
         <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
-            <label class="login2 pull-left pull-left-pro">Адрес для редиректа: </label>
+            <label class="login2 pull-left pull-left-pro">Endereço de redirecionamento: </label>
         </div>
         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
             <div class="input-group custom-go-button">
@@ -222,7 +222,7 @@ if (isset($_GET['startdate'])&& isset($_GET['enddate'])) {
 <div class="form-group-inner">
     <div class="row">
         <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-            <label class="login2 pull-left pull-left-pro">Выберите код редиректа: </label>
+            <label class="login2 pull-left pull-left-pro">Selecione o código de redirecionamento: </label>
         </div>
         <div class="col-lg-9 col-md-6 col-sm-6 col-xs-12">
             <div class="bt-df-checkbox pull-left">
@@ -269,7 +269,7 @@ if (isset($_GET['startdate'])&& isset($_GET['enddate'])) {
 <div class="form-group-inner">
     <div class="row">
         <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
-            <label class="login2 pull-left pull-left-pro">Адрес для подгрузки через curl: </label>
+            <label class="login2 pull-left pull-left-pro">URL de download do Curl: </label>
         </div>
         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
             <div class="input-group custom-go-button">
@@ -284,7 +284,7 @@ if (isset($_GET['startdate'])&& isset($_GET['enddate'])) {
 <div class="form-group-inner">
     <div class="row">
         <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
-            <label class="login2 pull-left pull-left-pro">HTTP-код для возврата вместо вайта: </label>
+            <label class="login2 pull-left pull-left-pro">Código HTTP para retornar em vez da página branco(white): </label>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
             <div class="input-group custom-go-button">
@@ -298,7 +298,7 @@ if (isset($_GET['startdate'])&& isset($_GET['enddate'])) {
 <div class="form-group-inner">
     <div class="row">
         <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-            <label class="login2 pull-left pull-left-pro">Показывать индивидуальный вайт под каждый домен? </label>
+            <label class="login2 pull-left pull-left-pro">Mostrar página branco(white) individual para cada domínio?</label>
         </div>
         <div class="col-lg-9 col-md-6 col-sm-6 col-xs-12">
             <div class="bt-df-checkbox pull-left">
